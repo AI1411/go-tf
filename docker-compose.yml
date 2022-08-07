@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  api-go:
+    build:
+      context: .
+    container_name: go-api
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/go/src/
+      - ./go.mod:/go/src/go.mod
+      - ./go.sum:/go/src/go.sum
